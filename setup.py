@@ -10,6 +10,7 @@ setup(
       author='git314',
       author_email='git314@tutanota.com',
       url='https://github.com/git314/termboxplot',
+      download_url='https://github.com/git314/termboxplot/releases/tag/0.0.1',
       keywords=['terminal','boxplot','unicode', 'ascii', 'utf8'],
       py_modules=['termboxplot'],
       install_requires=['Click', 'pandas', 'numpy'],

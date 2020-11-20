@@ -29,7 +29,26 @@ wget https://raw.githubusercontent.com/selva86/datasets/master/mpg_ggplot2.csv
 pip3 install termboxplot
 
 # make box plots from data
-cat mpg_ggplot2.csv | termbox  --g class --y hwy --option 4
+cat mpg_ggplot2.csv | termbox  --g class --y hwy --option 1
+
+1  │                     ──────◖──◦───◗─────────────────────────────
+2  │                     ──────◖──◦───◗──────
+3  │ ─────────◖──◦──◗───────────────
+4  │                     ──◖──◦──◗
+5  │          ─────────◖──◦──◗
+6  │ ───────◖──◦──◗───────
+7  │                ───────◖────◦───────────◗───────────────────────
++------------+---------+---------+---------+---------+---------+
+| class      | hwy_min | hwy_p25 | hwy_p50 | hwy_p75 | hwy_max |
++------------+---------+---------+---------+---------+---------+
+| compact    | 23      | 26      | 27      | 29      | 44      |
+| midsize    | 23      | 26      | 27      | 29      | 32      |
+| suv        | 12      | 17      | 18      | 19      | 27      |
+| 2seater    | 23      | 24      | 25      | 26      | 26      |
+| minivan    | 17      | 22      | 23      | 24      | 24      |
+| pickup     | 12      | 16      | 17      | 18      | 22      |
+| subcompact | 20      | 24      | 26      | 32      | 44      |
++------------+---------+---------+---------+---------+---------+
 ```
 
 # Install

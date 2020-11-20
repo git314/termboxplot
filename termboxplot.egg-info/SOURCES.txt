@@ -1,0 +1,10 @@
+README.md
+setup.cfg
+setup.py
+termboxplot.py
+termboxplot.egg-info/PKG-INFO
+termboxplot.egg-info/SOURCES.txt
+termboxplot.egg-info/dependency_links.txt
+termboxplot.egg-info/entry_points.txt
+termboxplot.egg-info/requires.txt
+termboxplot.egg-info/top_level.txt

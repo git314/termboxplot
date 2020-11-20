@@ -1,0 +1,16 @@
+Metadata-Version: 1.1
+Name: termboxplot
+Version: 0.0.1
+Summary: Tufte inspired, one-liner, pipe-able, tidy data compatible, utf8, unicode boxplots
+Home-page: https://github.com/git314/termboxplot
+Author: git314
+Author-email: git314@tutanota.com
+License: GPL
+Description: UNKNOWN
+Keywords: terminal,boxplot,unicode,ascii,utf8
+Platform: UNKNOWN
+Classifier: Development Status :: 1 - Planning
+Classifier: Intended Audience :: Science/Research/Business
+Classifier: License :: OSI Approved :: GPL
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3.5

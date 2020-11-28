@@ -10,7 +10,7 @@ import click
 @click.option("--g", help="if csv is not in 5 number format then provide the grouping column")
 @click.option("--y", help="if csv is not in 5 number format then provide the main column of interest")
 @click.option("--table", default=1, help="1. solid table ▁▁▁ 2: barred table ___ ")
-@click.option("--clip", default=1, help="1. min, max 2. 2% to 98% 3: 9% to 91%")
+@click.option("--clip", default=1, help="set clipping level for ends of boxplots: 1. min, max 2. 2% to 98% 3: 9% to 91% 4: 20% to 80%")
 @click.command()
 def main(option, g, y, table, clip):
 
@@ -29,7 +29,10 @@ def main(option, g, y, table, clip):
                 ma = "p99"
             elif clip == 3:
                 mi = "p8"
-                ma = "p93"
+                ma = "p92"
+            elif clip == 4:
+                mi = "p20"
+                ma = "p80"
             else:
                 mi = "min"
                 ma = "max"
@@ -55,7 +58,10 @@ def main(option, g, y, table, clip):
                 ma = "p99"
             elif clip == 3:
                 mi = "p8"
-                ma = "p93"
+                ma = "p92"
+            elif clip == 4:
+                mi = "p20"
+                ma = "p80"
             else:
                 mi = "min"
                 ma = "max"

@@ -49,6 +49,8 @@ cat mpg_ggplot2.csv | termbox  --g class --y hwy --option 1
 | pickup     | 12      | 16      | 17      | 18      | 22      |
 | subcompact | 20      | 24      | 26      | 32      | 44      |
 +------------+---------+---------+---------+---------+---------+
+
+get help with `termbox --help`
 ```
 
 # Install

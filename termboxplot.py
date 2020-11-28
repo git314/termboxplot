@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import os
 import numpy as np
-from pandas import read_csv, to_numpy
+from pandas import read_csv, DataFrame
 import click
 
 

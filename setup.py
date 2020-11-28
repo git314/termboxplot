@@ -4,7 +4,7 @@ import os
 
 setup(
     name="termboxplot",
-    version="0.0.5",
+    version="0.0.6",
     license="GPL LGPL",
     description="Tufte inspired, one-liner, pipe-able, tidy data compatible, utf8, unicode boxplots",
     author="git314",

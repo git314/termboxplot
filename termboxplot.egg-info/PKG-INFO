@@ -1,6 +1,6 @@
 Metadata-Version: 1.1
 Name: termboxplot
-Version: 0.0.4
+Version: 0.0.5
 Summary: Tufte inspired, one-liner, pipe-able, tidy data compatible, utf8, unicode boxplots
 Home-page: https://github.com/git314/termboxplot
 Author: git314

@@ -1,14 +1,13 @@
 # -*- coding: utf-8 -*-
 import os
-import sys
 import numpy as np
 from pandas import read_csv
 import click
 
 
 @click.option("--option", default=1, help="1:◖─◦─◗ 2: ▁╭─╴╶─╮▁ 3: ▁▂ ▂▁ 4:[=*=]")
-@click.option("--g", help="if csv is not in 5 number format then provide the grouping column")
-@click.option("--y", help="if csv is not in 5 number format then provide the main column of interest")
+@click.option("--g", help="provide the grouping column with --g <column_name>")
+@click.option("--y", help="provide the main column of interest with --y <column_name>")
 @click.option("--table", default=1, help="1. solid table ▁▁▁ 2: barred table ___ ")
 @click.option("--clip", default=1, help="set clipping level for ends of boxplots: 1. min, max 2. 2% to 98% 3: 9% to 91% 4: 20% to 80%")
 @click.command()
@@ -37,7 +36,11 @@ def main(option, g, y, table, clip):
                 mi = "min"
                 ma = "max"
             os.system(
-                "mlr --csv stats1 -a " + mi + ",p25,p50,p75," + ma + " -f "
+                "mlr --csv stats1 -a "
+                + mi
+                + ",p25,p50,p75,"
+                + ma
+                + " -f "
                 + y
                 + " -g "
                 + g
@@ -66,7 +69,11 @@ def main(option, g, y, table, clip):
                 mi = "min"
                 ma = "max"
             os.system(
-                "mlr --csv stats1 -a " + mi + ",p25,p50,p75," + ma + " -f "
+                "mlr --csv stats1 -a "
+                + mi
+                + ",p25,p50,p75,"
+                + ma
+                + " -f "
                 + y
                 + " > "
                 + str(tmp_location)
@@ -95,7 +102,6 @@ def main(option, g, y, table, clip):
     option3 = [" ", "▁", "▂", " ", "▂", "▁"]
     option4 = [" ", "─", "[", "=", "*", "=", "]", "─"]
     rows = array_numerics.shape[0]
-    print(rows)
 
     print("\n")
     if option == 1:

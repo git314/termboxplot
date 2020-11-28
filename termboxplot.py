@@ -10,8 +10,9 @@ import click
 @click.option("--g", help="if csv is not in 5 number format then provide the grouping column")
 @click.option("--y", help="if csv is not in 5 number format then provide the main column of interest")
 @click.option("--table", default=1, help="1. solid table ▁▁▁ 2: barred table ___ ")
+@click.option("--clip", default=1, help="1. min, max 2. 2% to 98% 3: 9% to 91%")
 @click.command()
-def main(option, g, y, table):
+def main(option, g, y, table, clip):
 
     tmp_location = "/tmp/termplot_summary.csv"
     # for first run
@@ -20,8 +21,20 @@ def main(option, g, y, table):
         if y is None:
             print("the --y option is required with --g")
         else:
+            if clip == 1:
+                mi = "min"
+                ma = "max"
+            elif clip == 2:
+                mi = "p1"
+                ma = "p99"
+            elif clip == 3:
+                mi = "p8"
+                ma = "p93"
+            else:
+                mi = "min"
+                ma = "max"
             os.system(
-                "mlr --csv stats1 -a min,p25,p50,p75,max -f "
+                "mlr --csv stats1 -a " + mi + ",p25,p50,p75," + ma + " -f "
                 + y
                 + " -g "
                 + g
@@ -29,12 +42,35 @@ def main(option, g, y, table):
                 + str(tmp_location)
             )
             array_raw = read_csv(tmp_location).to_numpy()
+            array_numerics = array_raw[:, 1:]
     else:
-        array_raw = read_csv(sys.stdin).to_numpy()
+        if y is None:
+            print("the --y option is required")
+        else:
+            if clip == 1:
+                mi = "min"
+                ma = "max"
+            elif clip == 2:
+                mi = "p1"
+                ma = "p99"
+            elif clip == 3:
+                mi = "p8"
+                ma = "p93"
+            else:
+                mi = "min"
+                ma = "max"
+            os.system(
+                "mlr --csv stats1 -a " + mi + ",p25,p50,p75," + ma + " -f "
+                + y
+                + " > "
+                + str(tmp_location)
+            )
+            array_raw = read_csv(tmp_location).to_numpy()
+            array_numerics = array_raw[:, 0:]
 
-    array_numerics = array_raw[:, 1:]
     option = option
     width = 60
+
     overall_min = np.min(array_numerics)
     overall_max = np.max(array_numerics)
 
@@ -53,6 +89,7 @@ def main(option, g, y, table):
     option3 = [" ", "▁", "▂", " ", "▂", "▁"]
     option4 = [" ", "─", "[", "=", "*", "=", "]", "─"]
     rows = array_numerics.shape[0]
+    print(rows)
 
     print("\n")
     if option == 1:

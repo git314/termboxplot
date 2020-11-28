@@ -4,7 +4,7 @@ import os
 
 setup(
       name='termboxplot',
-      version='0.0.1',
+      version='0.0.2',
       license='GPL',
       description='Tufte inspired, one-liner, pipe-able, tidy data compatible, utf8, unicode boxplots',
       author='git314',
@@ -16,8 +16,8 @@ setup(
       install_requires=['Click', 'pandas', 'numpy'],
       classifiers=[
         'Development Status :: 1 - Planning',
-        'Intended Audience :: Science/Research/Business',
-        'License :: OSI Approved :: GPL',
+        'Intended Audience :: Science/Research',
+        'License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)',
         'Operating System :: POSIX :: Linux',
         'Programming Language :: Python :: 3.5'
         ],
